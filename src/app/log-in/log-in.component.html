@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-end me-4">
+  <div
+    *ngIf="auth.user$ | async as user"
+    class="d-flex align-items-center gap-3 p-3 border rounded shadow-sm mt-2"
+    style="max-width: 400px"
+  >
+    <img
+      [src]="user.picture"
+      class="rounded-circle"
+      alt="Profile Picture"
+      width="70"
+      height="70"
+    />
+    <div>
+      <h5 class="mb-1">{{ user.name }}</h5>
+      <p class="mb-0 text-muted">{{ user.email }}</p>
+    </div>
+  </div>
+</div>
+  <div *ngIf="auth.user$ | async as user" class="d-flex justify-content-center mt-5 fs-6">
+    <h2>Welcome {{ user.name }}</h2>
+  </div>
+
+
